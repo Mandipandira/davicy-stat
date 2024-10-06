@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name="theme-color" content="orange">
+  <title>Furniture Store</title>
+  <link rel="stylesheet" href="mahogany.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="viewport.css">
+  <link href="footer.css" rel="stylesheet">
+  <link href="indexadd.css" rel="stylesheet">
+  <link href="text_animation.css" rel="stylesheet">
+  
+</head>
+<body oncontextmenu="return false;">
+  <div class="sidebar-x">
+    <div class="sidebar-icon">
+      <!-- Sidebar icons -->
+      <a href="davicy.html"><i class="fas fa-images fa-lg" title="View Gallery"></i></a><br>
+      <a href="video.html"><i class="fas fa-couch fa-lg" title="Recent Projects"></i></a><br>
+      <a href="tel: 0783578007"><i class="fas fa-phone fa-lg" title="Call"></i></a>
+      <a href="VideoDisplay.html"><i class="fa fa-code fa-lg" title="Site Developer" style="margin-top: 20px;"></i></a>
+    </div>
+  </div>
+
+  <div class="fullscreen">
+
+    <img src="dav.jpg" alt="Logo">
+  </div>
+  <div id="loading" class="overlay">
+    <div class="loading-message">
+      <p>Loading completed</p>
+    </div>
+  </div>
+
+  <header>
+  <!--Nav-->
+  <nav class="navbar">
+    <div class="navbar-brand">
+        <img src="logo/logwa.jpg" style="height: auto; width: 150px;">
+    </div>
+    <ul class="navbar-menu">
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+       
+        <div id="link">
+            <div class="login">
+                <button id="login"></button>
+            </div>
+        </div>
+        <div id="link">    
+            <div class="signup">
+                <button id="signup"></button>
+            </div>
+        </div>
+    </ul>
+    <div class="hamburger" onclick="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+        <img src="" style="margin-left: 0; width: 100%;">
+    </div>
+    <ul class="sidebar-menu">
+        
+        <li class="side-list">
+            <span class="fa-stack">
+                <i class="fas fa-gallery id="fasfa"></i>
+            </span>
+            <span class="gap"></span>
+            <a href="davicy.html">Gallery</a>
+        </li>
+        <hr>
+        <hr>
+        <li class="side-list">
+            <span class="fa-stack">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-furniture id="fasfa"></i>
+            </span>
+            <span class="gap"></span>
+            <a href="Video.html">Projects</a>
+        </li>
+        <hr>
+        <li class="side-list">
+            <span class="fa-stack">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-code id="fasfa"></i>
+            </span>
+            <span class="gap"></span>
+            <a href="VideoDisplay.html">Designer & Developer</a>
+        </li>
+        <hr>
+        <li class="side-list">
+            <span class="fa-stack">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-plane fa-stack-1x fa-inverse" id="fasfa"></i>
+            </span>
+            <span class="gap"></span>
+            <a href="davicy-contact.html">Contact</a>
+        </li>
+        <hr>
+    </ul>
+
+</div>
+
+<script>
+  function toggleSidebar() {
+    var sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('sidebar-open');
+}
+
+const containers = document.querySelectorAll('.container');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate__fadeIn');
+      entry.target.classList.remove('animate__fadeOut');
+    } else {
+      entry.target.classList.remove('animate__fadeIn');
+      entry.target.classList.add('animate__fadeOut');
+    }
+  });
+});
+
+containers.forEach((container) => {
+  observer.observe(container);
+});
+</script>
+
+<!--Nav-End-->
+
+
+
+
+  <h1 class="text">WELCOME TO DAVICY INTERIORS</h1>
+  
+  <p>Exclusive | Bespoke | Quality | Durable |</p>
+  <p>Teak furniture</p>
+  <div class="sharp"><i class="fas fa-thumbs-up"></i></div>
+  </header>
+  <hr>
+
+  <div id="content">
+    <section id="living-room" class="section">
+      <div class="container" style="background: #f8f8f8;">
+        <div class="image-half">
+          <img src="L8.jpg" alt="Living Room Furniture">
+        </div>
+        <div class="text-half">
+          <h2 class="text">Living Room Furniture</h2>
+          <p>Discover elegant furniture pieces for your living room, adding style and comfort to your space.</p>
+        </div>
+      </div>
+    </section>
+
+    <center>
+      <section id="one">    
+        <h1>Our Newest Addition: Ceilings</h1>
+        <div class="activity-container">
+          <div class="activity-item">
+            <img src="c/Polish_20240406_155441267.jpg" alt="" />
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="c/Polish_20240406_160108380.jpg" alt="" />
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="c/Polish_20240406_171822047.jpg" alt="" />
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="c/Polish_20240406_172639795.jpg" alt="" />
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="c/Polish_20240406_160026303.jpg" alt="" />
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="c/Polish_20240406_213551521.jpg" alt="" />
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="c/Polish_20240406_231500157.jpg" alt="" />
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+        </div>
+      </section>
+    </center>
+
+    <style>
+      .slideshow-container {
+        position: relative;
+        max-width: 700px;
+        min-width: 350px;
+        overflow: hidden;
+        margin: auto;
+      }
+    
+      .fade {
+        animation: fade 1.5s;
+      }
+    
+      @keyframes fade {
+        0% { opacity: 0; }
+        25% { opacity: 1; }
+        75% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+
+      .slide {
+        display: none;
+      }
+    
+      .slide img {
+        width: 100%;
+        height: auto;
+      }
+    
+      .textt {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="c/Polish_20240406_191641111.jpg" alt="" />
+        <div class="textt">Timeless | Bespoke | Exquisite</div>
+      </div>
+    
+      <div class="slide fade">
+        <img src="c/Polish_20240406_160026303.jpg" alt="" />
+        <div class="textt">All Teak</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="c/Polish_20240407_114715837.jpg" alt="" />
+        <div class="textt"></div>
+      </div>
+
+      <div class="slide fade">
+        <img src="allpic/kitch1.jpg" alt="" />
+        <div class="textt">Exclusive Interior Designs</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="allpic/S.jpg" alt="" />
+        <div class="textt">Staircases</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="allpic/OFF10.jpg" alt="" />
+        <div class="textt">Level Up</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="allpic/L4.jpg" alt="" />
+        <div class="textt">Quality</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="allpic/L18.jpg" alt="" />
+        <div class="textt">Beauty</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="new1/Polish_20240224_134834999.jpg" alt="" />
+        <div class="textt">Luxury</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="new2/Polish_20240303_084152002.jpg" alt="" />
+        <div class="textt">Stylish</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="new4/Polish_20240116_165624735.jpg" alt="" />
+        <div class="textt">Stunning</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="new4/Polish_20230918_183456756.jpg" alt="" />
+        <div class="textt">Neat</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="new4/Polish_20230919_173253261.jpg" alt="" />
+        <div class="text">Reach out to us.</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="new6/Polish_20240204_151550496.jpg" alt="" />
+        <div class="textt">Comfort</div>
+      </div>
+
+      <div class="slide fade">
+        <img src="new6/Polish_20240205_195128473.jpg" alt="" />
+        <div class="textt">Relax</div>
+      </div>
+    
+      <!-- Add more slides as needed -->
+    
+    </div>
+
+    
+    
+      
+      <section id="living-room" class="section">
+        <div class="container">
+            <div class="text-half">
+              <aside>
+                <h2>Kitchen</h2>
+                <p>Transform your culinary space into a haven of culinary creativity with our exquisite range of kitchen furniture, meticulously designed to inspire and elevate your cooking experience.
+                </p>
+              </aside>  
+            </div>
+            <div class="image">
+              <div class="image-half">
+                <img src="allpic/K7.jpg" alt="Living Room Furniture">      
+              </div>
+            </div>
+            
+        </div>
+      </section>
+
+      <section id="living-room" class="section">
+        <div class="container">
+          <div class="image-reverse">
+            <div class="image-half">
+              <img src="allpic/P7.jpg" alt="Living Room Furniture">
+            </div>
+          </div>
+          <div class="text-half">
+            <div class="reverse">
+              <h2>Pergolars</h2>
+              <p>Unleash your outdoor oasis with our captivating pergolas, blending timeless elegance and functional design to create an enchanting sanctuary for relaxation and entertainment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+<center>
+      <section id="one">
+        <h1>Explore</h1>
+        <div class="activity-container">
+          <div class="activity-item">
+            <img src="new89/Polish_20240229_212108883.jpg" alt="Hwange Image 1">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new89/Polish_20240229_211750416.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new89/Polish_20240229_212145182.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new8/Polish_20240301_165724843.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new89/Polish_20240229_211717097.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new89/Polish_20240229_212004382.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new8/Polish_20240301_170332783.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new8/Polish_20240301_170414506.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          </div>
+        </div>
+      </section>
+</center>
+
+
+
+        <section id="living-room" class="section">
+          <div class="container">
+              <div class="text-half">
+                <aside>
+                  <h2>Bedroom</h2>
+                  <p>Experience the epitome of comfort and style as our bedroom furniture harmoniously combines exquisite craftsmanship and luxurious materials, creating a serene retreat for restful nights and rejuvenating mornings.
+                  </p>
+                </aside>
+              </div>
+              <div class="image">
+                <div class="image-half">
+                  <img src="beds/bed.jpg" alt="Living Room Furniture">
+                </div>
+              </div>
+          </div>
+        </section>
+
+        <section id="living-room" class="section">
+          <div class="container">
+            <div class="image-reverse">
+              <div class="image-half">
+                <img src="dpics2/g.jpg" alt="Living Room Furniture">
+              </div>
+            </div>
+            <div class="text-half">
+              <div class="reverse">
+                <h2>Closets</h2>
+                <p>Upgrade your storage solutions with our impeccably crafted closets, providing seamless organization and sophisticated aesthetics to elevate your space and simplify your daily routine.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+          <section id="living-room" class="section">
+            <div class="container">
+                <div class="text-half">
+                  <aside>
+                    <h2>Staircases</h2>
+                    <p>Ascend to new heights of architectural elegance with our meticulously crafted staircases, where form meets function in a stunning fusion of design, durability, and safety.
+                    </p>
+                  </aside>
+                </div>
+                <div class="image">
+                  <div class="image-half">
+                    <img src="allpic/S1.jpg" alt="Living Room Furniture">
+                  </div>
+                </div>
+            </div>
+          </section>
+
+
+      
+      <!--Viewport-->
+      <center>
+        <main>
+            <h2>WHY US</h2>
+            <i class="fas fa-hands-helping why"></i>
+            <p>Artistry and <span class="animated-text">Quality</span></p>
+        </main>
+    
+        <main>
+          <i class="fas fa-paint-brush why"></i>
+            <p>What sets us apart is our dedication to customization and personalization. We understand that your space is as unique as you are, which is why we offer bespoke furniture options. From the size and design to the finish and functionality, we work closely with you to create furniture that perfectly complements your style and needs.
+            </p>
+        </main>
+    
+        <main>
+          <i class="fas fa-leaf why"></i>
+            <p>Sustainability is at the core of our ethos. Our teak wood is responsibly sourced, known for its eco-friendly nature and longevity. By choosing our furniture, you're not just investing in pieces that last a lifetime, but also in a greener future.
+            </p>
+        </main>
+    
+        <main>
+          <i class="fas fa-heart why"></i>
+            <p>Our commitment extends beyond the sale. Our team of experts is here to guide you through every step, ensuring a seamless and enjoyable experience. From design consultations to after-sales support, we are dedicated to making your furniture journey exceptional.
+            </p>
+        </main>
+    
+        <main>
+          <i class="fas fa-hammer why"></i>
+            <p>Discover the beauty and craftsmanship of teak furniture tailored to your taste. Welcome to a world where quality, customization, sustainability, and superior service converge to create furniture that truly reflects you.</p>
+        </main>
+      </center>
+
+
+          <section id="living-room" class="section">
+            <div class="container">
+              <div class="image-reverse">
+                <div class="image-half">
+                  <img src="new3/f5.jpg" alt="Living Room Furniture">
+                </div>
+              </div>
+              <div class="text-half">
+                <div class="reverse">
+                  <h2>Flooring</h2>
+                  <p>Elevate your interiors with our diverse selection of flooring options, meticulously crafted to add warmth, character, and a touch of timeless beauty to every room.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+            <section id="living-room" class="section">
+              <div class="container">
+                  <div class="text-half">
+                    <aside>
+                      <h2>Doors</h2>
+                      <p>Welcome guests into your world with our exquisite collection of doors, seamlessly blending captivating design and superior craftsmanship to create a grand entrance that leaves a lasting impression.
+                      </p>
+                    </aside>
+                  </div>
+                  <div class="image">
+                    <div class="image-half">
+                      <img src="walldoor/DM5.jpg" alt="Living Room Furniture">
+                    </div>
+                  </div>
+              </div>
+            </section>
+
+
+            <section id="living-room" class="section">
+              <div class="container">
+                <div class="imge-reverse">
+                  <div class="image-half">
+                    <img src="new1/dec.jpg" alt="Living Room Furniture">
+                  </div>
+                </div>
+                <div class="text-half">
+                  <div class="reverse">
+                    <h2>Decking</h2>
+                    <p>Embrace the great outdoors with our stunning decking solutions, expertly designed to transform your outdoor space into a luxurious haven, where relaxation and entertainment intertwine in perfect harmony.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+              <section id="living-room" class="section">
+                <div class="container">
+                    <div class="text-half">
+                      <aside>
+                        <h2>Cabinets</h2>
+                        <p>Welcome guests into your world with our exquisite collection of doors, seamlessly blending captivating design and superior craftsmanship to create a grand entrance that leaves a lasting impression.
+                        </p>
+                      </aside>
+                    </div>
+                    <div class="image">
+                      <div class="image-half">
+                        <img src="dpics/a5.jpg" alt="Living Room Furniture">
+                      </div>
+                    </div>
+                </div>
+              </section>
+
+    <center>
+      <section id="one">    
+        <h1 style="color: rgb(7, 7, 68); font-size: 30px; font-weight: 300;">Exclusive</h1>
+        <div class="activity-container">
+          <div class="activity-item">
+            <img src="new4/Polish_20230921_203500962.jpg" alt="Hwange Image 1">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new4/Polish_20230921_203709798.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new4/Polish_20230921_203747073.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new4/Polish_20231217_091600774.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new4/Polish_20231217_091932165.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new4/Polish_20231217_092056145.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+          <div class="activity-item">
+            <img src="new4/Polish_20231217_092144408.jpg" alt="Hwange Image 2">
+            <p><a href="tel: 0716032471">Call</a></p>
+          </div>
+        </div>
+      </section>
+    </center>
+
+              <section id="living-room" class="section">
+                <div class="container">
+                  <div class="image-reverse">
+                    <div class="image-half">
+                      <img src="new4/kitchen.jpg" alt="Living Room Furniture">
+                    </div>
+                  </div>
+                  <div class="text-half">
+                    <div class="reverse">
+                      <h2>Tables</h2>
+                      <p>Discover our collection of functional and elegant tables, designed to enhance your living areas. Whether you need a coffee table, dining table, or side table, our selection offers a range of styles, materials, and sizes to suit your needs and elevate your space.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+                <section id="living-room" class="section">
+                  <div class="container">
+                      <div class="text-half">
+                        <aside>
+                          <h2>Sofas</h2>
+                          <p>Experience ultimate comfort and luxury with our selection of sophisticated sofas. From sleek modern designs to classic and timeless styles, our sofas are crafted with high-quality materials and plush cushions to provide both style and relaxation in your living room.
+                          </p>
+                        </aside>
+                      </div>
+                      <div class="image">
+                        <div class="image-half">
+                          <img src="new4/s1.jpg" alt="Living Room Furniture">
+                        </div>
+                      </div>
+                  </div>
+                </section>
+
+                <style>
+                  .linear-box {
+                    max-width: 900px;
+                    padding: 20px;
+                    margin: 0 auto;
+                    overflow-x: scroll; /* Enable horizontal scrolling */
+                    white-space: nowrap; /* Prevents inner cards from wrapping */
+                  }
+                
+                  .linear-inner-card {
+                    display: inline-block;
+                    width: 50vh; /* Set the height of the card to 50vh */
+                    height: 50vh; /* Set the height of the card to 50vh */
+                    margin: 10px;
+                    border-radius: 10px;
+                    overflow: hidden; /* Ensure the image stays within the rounded corners */
+                  }
+                
+                  .linear-inner-card img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px; /* Ensure rounded corners for the image */
+                  }
+                </style>
+                
+              <center><h1 style="font-size: 25px; color: red;">ARTISTRY</h1></center>
+                <div class="linear-box">
+                  <div class="linear-inner-card">
+                    <img src="new3/Polish_20230502_195629675.jpg" alt="" />
+                  </div>
+                  <div class="linear-inner-card">
+                    <img src="new3/Polish_20230910_170700115.jpg" alt="" />
+                  </div>
+                  <div class="linear-inner-card">
+                    <img src="new1/Polish_20240204_143258505.jpg" alt="" />
+                  </div>
+                  <div class="linear-inner-card">
+                    <img src="new4/Polish_20230919_173253261.jpg" alt="" />
+                  </div>
+                  <div class="linear-inner-card">
+                    <img src="new6/w.jpg" alt="" />
+                  </div>
+                  <div class="linear-inner-card">
+                    <img src="new6/Polish_20240206_175828386.jpg" alt="" />
+                  </div>
+                  <div class="linear-inner-card">
+                    <img src="walldoor/conv1.jpg" alt="" />
+                  </div>
+                  <div class="linear-inner-card">
+                    <img src="new1/Polish_20240224_134657190.jpg" alt="" />
+                  </div>
+                  <!-- Add more linear-inner-cards here -->
+                </div>
+
+                <script>
+                  const container = document.querySelector('.linear-box');
+                  let amount = 0;
+                  const speed = 1; // Adjust the speed of scrolling
+                
+                  function scrollCards() {
+                    amount += speed;
+                    container.scrollLeft = amount;
+                
+                    if (amount >= container.scrollWidth - container.clientWidth) {
+                      amount = 0;
+                    }
+                  }
+                
+                  // Call the scrollCards function every 10 milliseconds for smooth scrolling
+                  setInterval(scrollCards, 10);
+                </script>
+                
+
+                <section id="living-room" class="section">
+                  <div class="container">
+                    <div class="image-reverse">
+                      <div class="image-half">
+                        <img src="new6/table.jpg" alt="Living Room Furniture">
+                      </div>
+                    </div>
+                    <div class="text-half">
+                      <div class="reverse">
+                        <h2>Table & Chairs set</h2>
+                        <p>Get your dream set tailored for you.</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+
+                  <section id="living-room" class="section">
+                    <div class="container">
+                        <div class="text-half">
+                          <aside>
+                            <h2>Couches</h2>
+                            <p>Create a cozy and inviting atmosphere in your living spaces with our range of stylish couches. Choose from a variety of designs, sizes, and upholstery options to find the perfect couch that complements your style and provides comfort for relaxing and socializing.
+                            </p>
+                          </aside>
+                        </div>
+                        <div class="image">
+                          <div class="image-half">
+                            <img src="new6/couch.jpg" alt="Living Room Furniture">
+                          </div>
+                        </div>
+                    </div>
+                  </section>
+
+
+                  <section id="living-room" class="section">
+                    <div class="container" style="background: #f8f8f8;">
+                      <div class="image-reverse">
+                        <div class="image-half">
+                          <img src="new6/chair.jpg" alt="Living Room Furniture">
+                        </div>
+                      </div>
+                      <div class="text-half">
+                        <div class="reverse">
+                          <h2>Chairs</h2>
+                          <p>Add a touch of sophistication and comfort to your living spaces with our range of stylish chairs. Whether you're looking for accent chairs, lounge chairs, or dining chairs, we offer a variety of designs, materials, and colors to suit your taste and create a cohesive look in your home.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+    <!-- Add more sections for other product categories -->
+
+  </div>
+
+  <style>
+    .testimonials {
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 20px;
+      background-color: #fff;
+  }
+
+  .testimonial {
+      display: inline-block;
+      width: 400px;
+      padding: 20px;
+      margin: 10px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .testimonial img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+  }
+
+  .testimonial h3 {
+    color: #333;
+  }
+
+  .testimonial p {
+    font-style: italic;
+    color: #777;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  </style>
+
+  <div class="testimonials">
+    <div class="testimonial">
+        <img src="testimonials/carry.jpeg" alt="Profile Image">
+        <h3>Carry Yung</h3>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+    </div>
+    <div class="testimonial">
+        <img src="testimonials/none.jpg" alt="Profile Image">
+        <h3>Juan Kng</h3>
+        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+        <p>"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+    </div>
+    <div class="testimonial">
+      <img src="testimonials/none.jpg" alt="Profile Image">
+      <h3>Kate Mzowe</h3>
+      <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+      <p>"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+    </div>
+    <div class="testimonial">
+      <img src="testimonials/rana.jpeg" alt="Profile Image">
+      <h3>Rana Yavuz</h3>
+      <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+      <p>"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+    </div>
+    <div class="testimonial">
+      <img src="testimonials/draco.jpeg" alt="Profile Image">
+      <h3>Draco Gapes</h3>
+      <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+      <p>"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+    </div>
+    <!-- Add more testimonials as needed -->
+</div>
+
+<script>
+  // Auto-scroll testimonials along the x-axis
+  const testimonials = document.querySelector('.testimonials');
+  let scrollAmount = 0;
+  const scrollDelay = 2; // Change delay as needed
+
+  function autoScroll() {
+      scrollAmount += 1;
+      testimonials.scrollLeft = scrollAmount;
+      if (scrollAmount >= testimonials.scrollWidth - testimonials.clientWidth) {
+          scrollAmount = 0;
+      }
+  }
+
+  let scrollInterval = setInterval(autoScroll, scrollDelay);
+
+  testimonials.addEventListener('mouseover', () => {
+      clearInterval(scrollInterval);
+  });
+
+  testimonials.addEventListener('mouseout', () => {
+      scrollInterval = setInterval(autoScroll, scrollDelay);
+  });
+</script>
+
+
+
+  <div class="footer">
+		<div class="nxt2nxt">
+			<p>
+				<div style="font-size: 30px; color: red;"><i class="fas fa-map-marker-alt"></i></div>
+				<div>1 Green Trees Road</div>
+				<div>Lochinvar</div>
+				<div>Harare</div>
+				<div>Zimbabwe</div>
+
+				<div class="social-icons" style="color: orange;">
+					<i class="fas fa-envelope">: infor@davicy.com</i>
+					
+				</div>
+        <i class="fas fa-phone" style="color: orange;"></i>
+				<a href="tel: 0783578007" class="call-link">Dial 1</a>
+				<a href="tel: 0716032471" class="call-link">Dial 2</a>
+			</p>
+		</div>
+
+		
+				
+			
+		<div class="nxt2nxt">
+			<p>
+				<div style="font-size: 30px; color: #060647;">Furniture Services:</div>
+				<div>Frames</div>
+				<div>Ceilings</div>
+				<div>Pergolas</div>
+				<div>Bedroom Furniture and more ... </div>
+			</p>
+		</div>
+
+		<div class="nxt2nxt">
+			<div style="font-size: 30px; color: #060647;">Our Social Handles:</div>
+
+			<div class="social-icons">
+				<a href="#"><i class="fab fa-facebook"></i></a>
+				<a href="#"><i class="fab fa-linkedin"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a href="#"><i class="fab fa-youtube"></i></a>
+			</div>
+		
+			<div class="social-icons">
+				<a href="#"><i class="fab fa-whatsapp"></i></a>
+				<a href="#"><i class="fab fa-pinterest"></i></a>
+			</div>
+    </div>
+	
+  </div>
+
+  <footer style="background: grey;">
+    &copy; 2024 Lanso (Freelancer) <a href="https://wa.me/+26371458271"><i class="fab fa-whatsapp"></i></a>
+  </footer>
+    
+ 
+  <script src="text_animation.js"></script>
+  <script src="script.js"></script>
+  <script>
+    let slideIndex = 0;
+    showSlides();
+  
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+  </script>
+
+<script src="viewport.js"></script>
+</body>
+</html>

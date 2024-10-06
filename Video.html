@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="orange">
+  <title>Projects</title>
+  <link rel="stylesheet" href="video.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body oncontextmenu="return false">
+
+    <header>
+        <a href="#" class="brand">Davicy</a>
+        <i id="menuBtn" class="fas fa-bars"></i>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="davicy.html">Gallery</a>
+                <a href="davicy-contact.html">Contact</a>
+            </div>
+        </div>
+    </header>
+
+
+        <section class="home">
+            <video class="video-slide" src="c/20240425_112757.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="c/1.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="c/2.mp4" autoplay muted loop></video>
+        <div class="content">
+            <h1>Exclusive Furniture.<br><span>Doors</span></h1>
+            <p>Contact us for a free quote.</p>
+            <a href="davicy-contact.html">Contact Us</a>
+        </div>
+        <div class="media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="slide-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script>
+        //code to toggle the responsive navigation bar
+        var menuBtn = document.getElementById('menuBtn');
+        var navigation = document.querySelector('.navigation')
+
+        menuBtn.addEventListener('click', function() {
+            menuBtn.classList.toggle('active');
+            navigation.classList.toggle('active');
+        
+            if (menuBtn.classList.contains('active')) {
+                menuBtn.classList.remove('fa-bars');
+                menuBtn.classList.add('fa-times');
+            } else {
+                menuBtn.classList.remove ('fa-times');
+                menuBtn.classList.add('fa-bars');
+            }
+        });
+
+        // Slider
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+
+        var sliderNav = function(manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove('active');
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove('active');
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+    
+</body>
+</html>

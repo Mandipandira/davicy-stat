@@ -1,0 +1,113 @@
+main {
+    max-width: 700px;
+    min-width: 350px;
+    background: linear-gradient(to right, #1f1e63, #2603c5);
+    color: #eeeef3;
+    padding: 50px 0;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 7s, transform 4s;
+}
+
+main.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+aside {
+    opacity: 0;
+    transform: translateX(150px);
+    transition: opacity 7s, transform 4s;
+}
+
+aside.in-view-now {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.image {
+    display: flex;
+    opacity: 0;
+    transform: translateY(150px);
+    transition: opacity 7s, transform 4s;
+}
+
+.image.in-view-img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reverse {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: opacity 7s, transform 4s;
+}
+
+.reverse.in-view-reverse {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.image-reverse {
+    display: flex;
+    opacity: 0;
+    transform: translateY(-150px);
+    transition: opacity 7s, transform 4s;
+}
+
+.image-reverse.in-view-img-reverse {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.holder_img {
+    max-width: 700px;
+    min-width: 350px;
+    height: auto;
+    object-fit: scale-down;
+}
+
+.holder_img > img {
+    max-width: 700px;
+    min-width: 350px;
+    height: auto;
+    object-fit: scale-down;
+}
+
+.why {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.animated-text {
+    display: inline-block;
+    font-size: 1.5em;
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow-text-animation 2s infinite;
+}
+
+@keyframes rainbow-text-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
