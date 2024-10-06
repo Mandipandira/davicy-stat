@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="newnav.css">
+	<link rel="stylesheet" href="last_pics.css">
+	<title>Davicy Furniture</title>
+	<style>
+		body {
+			font-family: 'Montserrat', sans-serif;
+			background-color: #0c162e;
+			border: 0;
+			margin: 0 auto;
+			padding: 0;
+			max-width: 920px;
+			user-select: none;
+			display: center;
+		}
+
+		p {
+			user-select: none;
+		}
+
+		img {
+			pointer-events: none;
+		}	
+
+		.navbar {
+			width: 100%;
+			height: 60px;
+			background-color: white;
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.navbar-brand {
+			font-weight: bold;
+			font-size: 20px;
+			margin-left: 10px;
+		}
+
+		.navbar-menu {
+			list-style-type: none;
+			display: flex;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
+		}
+
+		.navbar-menu li {
+			margin: 0 10px;
+		}
+
+		.navbar-menu a {
+			color: #333;
+			text-decoration: none;
+			font-size: 16px;
+		}
+
+		.navbar-menu a:hover {
+			text-decoration: underline;
+		}
+
+		.navbar-signup {
+			margin-right: 10px;
+		}
+
+		.navbar-signup a {
+			background-color: #fff;
+			color: #333;
+			padding: 8px 16px;
+			border-radius: 4px;
+			text-decoration: none;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+		.sidebar {
+			align-items: center;
+			position: fixed;
+			top: 0;
+			left: -350px;
+			width: 350px;
+			height: 100%;
+			background-color: rgba(4, 0, 255, 0.329);
+			color: #fff;
+			transition: left 0.3s;
+		}
+
+		.sidebar-open {
+			left: 0;
+		}
+
+		.sidebar-brand {
+			font-weight: bold;
+			font-size: 20px;
+			padding: 10px;
+		}
+
+		.sidebar-menu {
+			list-style-type: none;
+			padding: 0;
+			margin: 20px 0;
+		}
+
+		.sidebar-menu li {
+			margin-bottom: 10px;
+		}
+
+		.sidebar-menu a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 16px;
+			padding: 5px;
+			display: block;
+		}
+
+		.hamburger {
+			position: relative;
+			flex-direction: column;
+			align-items: center;
+			width: 30px;
+			height: 30px;
+			right: -395px;
+			top: -20px;
+			cursor: pointer;
+		}
+
+		.hamburger span {
+			z-index: 999;
+			width: 100%;
+			height: 2px;
+			margin-bottom: 6px;
+			background-color: rgb(229, 255, 0);
+		}
+
+		.heros {
+			position: absolute;
+			max-width: none;
+		}
+
+		.cont {
+			display: flex;
+			flex-direction: column-reverse;
+			align-items: center;
+			justify-content: center;
+			background-color: #08022b;
+			margin-top: 40px;
+			margin-bottom: 10px;
+		}
+
+		.cont > .cont-box {
+			color: rgb(235, 74, 15);
+			max-width: 200px;
+			align-items: center;
+			justify-content: center;
+			margin: 10px;
+		}
+
+		.cont-scroll {
+			width: 380px;
+			height: auto;
+			background-color: #011825;
+			display: flex;
+			overflow-x: scroll;
+			scroll-snap-type: x-mandatory;
+			align-items: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
+
+		}
+
+		.cont-cube img {
+			width: 200px;
+			height: 200px;
+			margin-right: 10px;
+			margin-bottom: 10px;
+			display: flex;
+			object-fit: cover;
+			scroll-snap-align: center;
+		}
+
+		button {
+			border-top-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+			color: orange;
+			background-color: #333;
+		}
+
+		button:hover {
+			background-color: #7c9beb;
+		}
+
+		.navbar-brand img {
+			width: 100px;
+			height: auto;
+			object-fit: scale-down;
+		}
+
+		.typing-text {
+			overflow: hidden;
+			border-right: 0.15em solid #000;
+			white-space: nowrap;
+			letter-spacing: 0.1rem;
+			animation: typing 4s steps(40, end) infinite;
+		}
+
+		main {
+			margin: 10px;
+			display: none;
+		}
+
+		#page1 {
+			background-color: #26292e;
+			margin: 1px;
+			max-width: 700px;
+			padding: 20px;
+		}
+
+
+		.about {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+		}
+
+		.about > img {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+		}
+
+		.social-icons {
+			display: flex;
+		}
+
+		.social-icons a {
+			display: inline-block;
+			margin-right: 5px;
+			color: #eee;
+			font-size: 17px;
+		}
+
+		.social-icons a:hover {
+			color: #007bff;
+		}
+
+		.footer {
+			background:rgba(4, 0, 255, 0.253);
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #bbb;
+			background-color: rgb(70, 44, 44);
+			margin-top: 10px;
+		}
+
+		.nxt2nxt {
+			width: 200px;
+			height: auto;
+			margin-right: 10px;
+			margin-top: 20px;
+			padding: 2px;
+			color: silver;
+		}
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 999;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		.modal img {
+			display: block;
+			max-width: 80%;
+			max-height: 80%;
+			margin: 10% auto;
+		}
+
+		.timber {
+			width: 200px;
+			height: 200px;
+			display: flex;
+		}
+		
+		#timbers img {
+			width: 200px;
+			object-fit: cover;
+		}
+
+		.block {
+			display: inline-block;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		.call-link {
+			display: inline-block;
+			background: #007bff;
+			color: fff;
+			text-decoration: none;
+			border-radius: 5px;
+			font-size: 16px;
+			font-weight: bold;
+			margin: 5px;
+		}
+
+		#description {
+			max-width: 400px;
+			color: #fff;
+			border-radius: 10px;
+		}
+
+		.site {
+			width: 250px;
+			height: 300px;
+		}
+
+		.site-img > img {
+			width: 250px;
+			height: 300px;
+			object-fit: cover;
+		}
+
+		#why-abt {
+			font-size: 70px;
+		}
+
+		@keyframes typing {
+			from {
+				width: 0;
+			}
+			to {
+				width: 100%;
+			}
+		}
+
+		@media (max-width: 10000px) {
+			.navbar-menu {
+				display: none;
+			}
+	
+			.navbar-signup {
+				display: none;
+			}
+
+			.hamburger {
+				display: flex;
+			}
+		}
+
+		@media (min-width: 700px) {
+			.cont-scroll {
+				width: 900px;
+			}
+		}
+
+		@media (max-width: 500px) {
+			.footer {
+				display: grid;
+			}
+
+			.nxt2nxt {
+				display: block;
+			}
+		}
+
+	</style>
+
+	<script>
+
+		function toggleSidebar() {
+			var sidebar = document.getElementById('sidebar');
+			sidebar.classList.toggle('sidebar-open');
+		}
+
+	</script>
+
+</head>
+<body oncontextmenu="return false;">
+
+	<header style="color: white;">
+		<div class="navbar">
+			<div class="logo">
+				<a href="#">
+					<img src="logo/logwa.jpg" style="height: auto; width: 150px;">
+				</a>
+			</div>
+			<ul class="links" style="margin-right: 100px;">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Video.html">Ad</a></li>
+				<li><a href="davicy-contact.html">Contact</a></li>
+			</ul>
+			<a href="#" class="action_btn" style="display: none;"></a>
+			<div class="toggle_btn" style="color: #fff;">
+				<i class="fas fa-bars"></i>
+			</div>
+		</div>
+			
+		<div class="dropdown_menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Video.html">Ad</a></li>
+				<li><a href="davicy-contact.html">Contact</a></li>
+		</div>
+	</header>
+
+	<script>
+		const toggleBtn = document.querySelector('.toggle_btn')
+		const toggleBtnIcon = document.querySelector('.toggle_btn i')
+		const dropDownMenu = document.querySelector('.dropdown_menu')
+
+		toggleBtn.onclick = function () {
+			dropDownMenu.classList.toggle('open')
+			const isOpen =dropDownMenu.classList.contains('open')
+
+			toggleBtnIcon.classList = isOpen
+				? 'fas fa-bars'
+				: 'fas fa-times'
+		}
+	</script>
+
+	<style>
+		.circle {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: rgb(208, 255, 0);
+			animation: move 5s infinite linear;
+		}
+
+		@keyframes move {
+			0% {
+				transform: translate(0, 0);
+			}
+			25% {
+				transform: translate(100px, 100px)
+			}
+			50% {
+				transform: translate(-50px, 50px);
+			}
+			75% {
+				transform: translate(50px, -50px);
+			}
+			100% {
+				transform: translate(0, 0);
+			}
+		}
+	</style>
+
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	
+	
+	<div class="flashing-light" style="background:rgba(4, 0, 255, 0.253)"></div>
+	<div class="flashing-light" style="top: 25px; left: 100px;"></div>
+	<div class="flashing-light" style="bottom: 40px; left: 58px; background: rgb(212, 0, 255)"></div>
+	<div class="flashing-light" style="top: 55px; left: 500px;"></div>
+	<div class="flashing-light" style="top: 92%; left: 40%px; background: red;"></div>
+	
+	<div class="delayed-bar">Adrian Upwork Freelancer: Full Web Development</div>
+
+	<style>
+		.flashing-light {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 20px;
+			align-items: flex-end;
+			justify-content: flex-end;
+			background-color: rgba(0, 255, 0, 0.966);
+			border-radius: 50%;
+			box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.966);
+			animation: flashing 1s infinite;
+		}
+
+		@keyframes flashing {
+			0% {
+				opacity: 0;
+				transform: scale(0);
+			}
+			50% {
+				opacity: 1;
+				transform: scale(1);
+				box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.966);
+			}
+			100% {
+				opacity: 0;
+				transform: scale(0);
+				box-shadow: none;
+			}
+		}
+
+	</style>
+	<style>
+		.delayed-bar {
+			width: 100%;
+			height: 2vh;
+			position: relative;
+			background-color: orange;
+			animation: delayed-appear 0.5s ease-in-out 5s forwards;
+		
+		}
+
+		@keyframes delayed-appear {
+			0% {
+				opacity: 0;
+				transform: translateY(-100%);
+			}
+			100% {
+				opacity: 1;
+				transform: translateY(100);
+			}
+		}
+	</style>
+
+	
+
+	
+
+	<nav class="navbar" style="display: none;">
+		<div class="navbar-brand">
+			<img src="logo/logwa.jpg">
+		</div>
+		<ul class="navbar-menu">
+			<li><a href="#">Browse</a></li>
+		</ul>
+		<div class="hamburger" onclick="toggleSidebar()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</nav>
+
+	<div class="sidebar" id="sidebar">
+		<div class="sidebar-brand" style="color:#284389; font-size: 30px;">
+				<img src="logo/logwa.jpg" style="height: auto; width: 150px;">
+		</div>
+		<ul class="sidebar-menu">
+			<li><a href="login.html"></a></li>
+			<li><a href="registers.html"></a></li>
+		</ul>
+		<div class="sidebar-brand">Quick Links</div>
+		<ul class="sidebar-menu">
+			<li><button data-page="page1">About</button></li>
+
+
+			<li><a href="davicy-contact.html">Contact</a></li>
+			<li>
+				<div class="social-icons">
+					<a href="#"><i class="fab fa-facebook"></i></a>
+					<a href="#"><i class="fab fa-linkedin"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
+					<a href="#"><i class="fab fa-youtube"></i></a>
+				</div>
+			</li>
+			<li>
+				<div class="social-icons">
+					<a href="#"><i class="fab fa-whatsapp"></i></a>
+					<a href="#"><i class="fab fa-pinterest"></i></a>
+				</div>
+			</li>
+		</ul>
+		<div class="sidebar-brand">Services Review</div>
+		<ul>
+			<li>Dress your home/office with quality and fancy furniture.</li>
+		</ul>
+			<img src="dpics/d7.jpg" alt="real estate" height="auto" width="85%">
+		
+	</div>
+
+
+	<style>
+
+		.slideshow-container {
+			max-width: 700px;
+			height: auto;
+			margin: 0 auto;
+		}
+
+		.slideshow-container img {
+			width: 100%;
+			height: 88vh;
+			object-fit: cover;
+		}
+		
+		.dot {
+			height: 10px;
+			width: 10px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			margin: 0 2px;
+		}
+
+		.dot.active {
+			background-color: #717171;
+		}
+
+		@media (max-width: 700px) {
+			.slideshow-container img {
+				height: 80vh;
+			}
+
+			.slideshow-container {
+				max-width: 400px;
+			}
+		}
+
+	</style>
+
+	<div class="slideshow-container">
+		<img class="mySlides" src="dpics/d.jpg">
+		<img class="mySlides" src="dpics/d1.jpg">
+		<img class="mySlides" src="dpics/d2.jpg">
+		<img class="mySlides" src="dpics/d3.jpg">
+		<img class="mySlides" src="dpics/d4.jpg">
+ 			
+		<!-- Slide indicators -->
+		<div style="text-align: center;">
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+		</div>
+	</div>
+
+	<script>
+		
+		var slideIndex = 0;
+		showSlides();
+		
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+
+			slideIndex++;
+
+			if (slideIndex > slides.length) {
+				slideIndex = 1;
+			}
+
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+
+			setTimeout(showSlides, 2000);
+		}
+
+	</script>
+
+	<script>
+
+		function showPage(page) {
+		   document.querySelectorAll('main').forEach(main => {
+			   main.style.display = 'none';
+		   })
+
+		   document.querySelector(`#${page}`).style.display = 'block';
+		};
+
+		document.addEventListener('DOMContentLoaded', function() {
+			document.querySelectorAll('button').forEach(button => {
+				button.onclick = function() {
+					showPage(this.dataset.page)
+				}
+			});
+		});
+   </script>
+	
+		
+			<button data-page="page1" class="block">About Us<i class="fas fa-infor-circle"></i></button>
+			<button data-page="page2" class="block">Why Teak?</button>
+			<button data-page="page3" class="block">Product Categories</button>
+			<button data-page="page4" class="block">How to buy?</button>
+			<div class="hamburger" onclick="toggleSidebar()">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+
+			<div id="top"><a href="#bottom">Bottom</a><div>
+				
+			<main id="page1" style="background-image: url('logo/blackbg.jpg'); color: #eee;">
+
+				<i class="fas fa-globe" id="why-abt"></i>
+				<h1>Welcome to DAVICY INTERIORS</h1>
+				<div>
+					<p>
+						At DAVICY INTERIORS, we believe that every furniture piece is more than what the eye sees, it is a unique and individual sculpture; we are were comfort is savoured, and where your unique style design is given life. We are proudly a Zimbabwe-basd teak timber furniture brand, on a mission to reshape the way you experience home comfort.
+					</p>
+				</div>
+
+				
+				<h1>Why Us?</h1>
+				<div>
+					<p>
+						LUXURY Craftsmanship: Each item in our collection is a testament to the artistry of our skilled craftsmen. Quality is our main priority, ensuring that every detail, stitch, and contour reflects who we are.
+					</p>
+				</div>
+
+				<i class="fas fa-cogs" id="why-abt"></i>
+				<h1>Bespoke</h1>
+				<div>
+					<p>
+						Your home exudes your personality, and your funiture should do the same. Our diverse range of styles, colors, and fabrics allows you to find the perfect piece that complements your personal taste.
+					</p>
+				</div>
+
+				<i class="fas fa-building" id="why-abt"></i>
+				<h1>From Concept to Comfort</h1>
+				<div>
+					<p>
+						DAVICY INTERIORS was born out of a wild dream to provide home owners with an exquisite and timeless touch of luxurious teak timber furniture. Driven by a deep appreciation of design and commitment to customer satisfaction, we embarked on a journey to reshape the whole shopping experience. Proud, we stand today as a testament to the belief that comfort and style can harmoniously complement each other.
+					</p>
+				</div>
+
+				<i class="fas fa-users" id="why-abt"></i>
+				<h1>Join the community</h1>
+				<div>
+					<p>
+						By choosing DAVICY INTERIOS, you're becoming part of a community that values quality, style, and unmatched comfort. Join us on this journry, and together we can transform your living spaces into a haven of luxury and relaxation. We desire to be a part of your home's story.
+					</p>
+				</div>
+					
+				<i class="fas fa-search" id="why-abt"></i>
+				<p>
+					Discover painstaking excellence and craftsmanship, personalized service, and a seamless online shopping experience.
+				</p>
+
+				<div class="about">
+					<img src="dpics2/g6.jpg">
+				</div>
+				
+
+				<h2>REVIEWS</h2>
+				<div>Trusted by over 1000 clients since 2020.</div>
+
+
+				<div class="cont">
+					<div class="cont-box">
+						<p class="typing-text">Ad space</p>
+						<p class="typing-text">Advertise your business.</p>
+					</div>
+				</div>
+
+			</main>
+
+			
+
+
+
+			
+			
+		
+			<main id="page2" style="color: #eee;">
+				<h1>Why Teak?</h1>
+	
+				<div>
+					<p>
+						<h2>What type of wood is teak?</h2>
+						Teak is a close-grained type of hardwood. It is widely considered to be the king of woods' and makes excellent outdoor furniture due to its water-resistance property, durability and beauty.
+					</p>
+
+					<ul>
+						<li>Teak wood tends to be golden or medium brown.</li>
+						<li>Its color darkens over time: Ideal property in adding aesthetic value to furniture.</li>
+						<li>Teak has a high oil content, giving it the highest decay resistance among all natural wood products.</li>
+					</ul>
+				</div>
+
+					<h3>Teak In Timber Yard.</h3>
+					<div class="timber">
+						<div id="timbers">
+							<img src="teak/teak1.jpg" alt="teak">
+						</div>
+
+						<div id="timbers">
+							<img src="teak/teak2.jpg" alt="teak">
+						</div>
+					</div>
+
+				<div>
+					<h2>More about teak timber</h2>
+					<p>
+						It comes from the teak tree, or Tectona grandis. Tectona grandis is a tall, deciduous tree found in South and Southeast Asia and some parts of Africa. Growing up to 50 meters and living for 100 years, teak is coveted for its attractive colour and grain, durability, strength, resistance to splitting, cracking, termites, fungus and weathering.
+					</p>
+					<img src="teak/tree.jpg" alt="forest" style="width: 100%; height: 400px;">
+				</div>
+			</main>
+
+
+
+			<main id="page3" style="background: silver; color: #333;">
+
+				<h1>PRODUCT GROUPS</h1>
+				<ul>
+					<li><a href="#decking">Decking</a></li>
+					<li><a href="#kitchen">Kitchen</a></li>
+					<li><a href="#pergolas">Pergolas</li></li>
+					<li><a href="#bedroom">Bedroom Furniture</a>
+						<ul>
+							<li><a href="#closets">Closets</a></li>
+						</ul>
+					</li>
+					<li><a href="#living">Living Rooms</a></li>
+					<li><a href="#staircases">Staircases</a></li>
+					<li><a href="#doors">Doors</a></li>
+					<li><a href="#flooring">Flooring</a></li>
+				</ul>
+				<h2>Sundry includes all of the above in addition to:</h2>
+				<ul>
+					<li><a href="#sundry">Sundry</a></li>
+					<ul>
+						<li>Wall Cladding</li>
+						<li>Home Bars</li>
+						<li>Dinette</li>
+						<li>Conversation Pits</li>
+						<li>Office</li>
+					</ul>
+				</ul>
+
+			</main>
+
+
+			<main id="page4" style="color: silver;">
+				<h1>Steps to have your furnitue custom-made for you.</h1>
+				<h2>Quicker step:</h2>
+					<ol>
+						<li>Click to view a picture. Pause if in the Sundry automated compartment.</li>
+						<li>Take a screenshot</li>
+						<li>Upload and Submit it here.</li>
+						<a href="davicy-contact.html" style="color:rgba(0, 255, 0, 0.966)">Fill and Submit</a>
+						<li>Wait for our response via mail within 72 hours with the pricing information and the steps you will need to deposit a fee.</li>
+					</ol>
+					OR
+					<ol>
+						<li>Enjoy and browse through the categories/Visit the category you want.</li>
+						<li>Click the item to view it on the screen.</li>
+						<li>Now take a screenshot.</li>
+						<li>Click the hamburger sign at the far top-right corner of the site.</li>
+						<li>Click Contact text to visit our contact form.</li>
+						<li>Fill the form and submit</li>
+					</ol>
+				<h3>The quickest step to send inquiries will be implemented soon</h3>
+				ENJOY!
+				
+			</main>
+
+
+
+
+<center>
+		<div class="cont">
+			<div class="cont-box" id="office">
+				<h1 style="font-weight: bolder;">OFFICE</h1>
+			</div>
+		</div>
+
+		<h2>Office:</h2>
+		<div id="description">
+			<p>
+				Enhance your workspace with our Teak Timber office furniture. Crafted with precision and designed for comfort, our collection includes desks, chairs, bookcases, and storage solutions that elevate your office environment. The natural beauty and durability of Teak wood bring sophistication and warmth to your workspace, creating an atmosphere conducive to productivity and inspiration.
+			</p>
+		</div>
+
+
+		<div class="cont-scroll">
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a.jpg" onclick="openModal('dpics/a.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e.jpg" onclick="openModal('dpics/e.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a1.jpg" onclick="openModal('dpics/a1.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e1.jpg" onclick="openModal('dpics/e1.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a2.jpg" onclick="openModal('dpics/a2.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e2.jpg" onclick="openModal('dpics/e2.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a3.jpg" onclick="openModal('dpics/a3.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e3.jpg" onclick="openModal('dpics/e3.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a4.jpg" onclick="openModal('dpics/a4.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e4.jpg" onclick="openModal('dpics/e4.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a5.jpg" onclick="openModal('dpics/a5.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e5.jpg" onclick="openModal('dpics/e5.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a6.jpg" onclick="openModal('dpics/a6.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e6.jpg" onclick="openModal('dpics/e6.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a7.jpg">
+				<button>Purchase</button>
+				<img src="dpics/e7.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a8.jpg">
+				<button>Purchase</button>
+				<img src="dpics/e8.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a9.jpg">
+				<button>Purchase</button>
+				<img src="dpics/e9.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/ax.jpg">
+				<button>Purchase</button>
+				<img src="dpics/ex.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/b.jpg">
+				<button>Purchase</button>
+				<img src="dpics/b1.jpg">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/b2.jpg">
+				<button>Purchase</button>
+				<img src="dpics/b3.jpg">
+			</div>
+
+		</div>
+
+</center>
+
+		<div id="modal" class="modal" onclick="closeModal()">
+			<img id="modal-img" src="" alt="Modal Image">
+		</div>
+
+		<script>
+			function openModal(imgSrc) {
+				var modal = document.getElementById('modal');
+				var modalImg = document.getElementById('modal-img');
+	
+				modal.style.display = 'block';
+				modalImg.src = imgSrc;
+			}
+	
+			function closeModal() {
+				var modal = document.getElementById('modal');
+				modal.style.display = 'none';
+			}
+		</script>
+
+		
+
+		<div class="cont">
+			<div class="cont-box" id="closets">
+				<h1 style="font-weight: bolder";>CLOSETS</h1>
+			</div>
+		</div>
+
+		
+
+		<h2>Walk in closets</h2>
+		<div id="description">
+			<p>
+				A sub-cartegory branched from the main stem, Bedroom Furniture. Teak quality and beauty never fades.
+			</p>
+		</div>
+
+		<div class="cont-scroll">
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics2/g.jpg">
+				<button>Purchase</button>
+				<img src="dpics2/g1.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics2/g3.jpg">
+				<button>Purchase</button>
+				<img src="dpics2/g4.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics2/g5.jpg">
+				<button>Purchase</button>
+				<img src="dpics2/g6.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics2/g7.jpg">
+				<button>Purchase</button>
+				<img src="dpics2/g8.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics2/g9.jpg">
+				<button>Purchase</button>
+				<img src="dpics2/g10.jpg">
+			</div>
+
+		</div>
+
+		<center>
+		<div class="cont">
+			<div class="cont-box" id="bedroom">
+				<h1 style="font-weight: bolder";>BEDROOM FURNITURE</h1>
+				<div><a href="davicy-contact.html">Don't forget to reach us</a></div>
+			</div>
+		</div>
+
+		<h2>Bedroom</h2>
+		<div id="description">
+			<p>
+				Create a serene and inviting retreat with our Teak Timber bedroom furniture. Our collection offers a wide range of bed frames, nightstands, dressers, and wardrobes that combine functionality with stunning aesthetics. The natural grains and rich hues of Teak wood create a soothing ambiance, making your bedroom a sanctuary for relaxation.
+			</p>
+		</div>
+
+
+		<div class="cont-scroll" style="border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+			<div class="cont-cube">
+				<img src="beds/bed.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<img src="beds/bed1.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<img src="beds/bed2.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<img src="beds/bed3.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<img src="beds/bed4.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<img src="beds/bed5.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<img src="beds/bed6.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<img src="beds/bed7.jpg">
+			</div>
+
+			<div class="cont-cube">
+				<img src="beds/bed8.jpg">
+			</div>
+
+
+		</div>
+</center>		
+
+		<div class="cont">
+			<div class="cont-box" id="doors">
+				<h1 style="font-weight: bolder";>DOORS</h1>
+			</div>
+		</div>
+
+		<h2>Doors:</h2>
+		<div id="description">
+			<p>
+				Make a grand entrance with our Teak Timber doors. Crafted with elegance, our Teak doors not only provide security and privacy but also serve as stunning focal points for your home. With their natural beauty and durability, our Teak doors stand the test of time while adding a touch of greatness to your entryway.
+			</p>
+		</div>
+
+		<div class="cont-scroll">
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D.jpg" onclick="openModal('walldoor/D.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D1.jpg" onclick="openModal('walldoor/D1.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D2.jpg" onclick="openModal('walldoor/D2.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D3.jpg" onclick="openModal('walldoor/D3.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D4.jpg" onclick="openModal('walldoor/D4.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D5.jpg" onclick="openModal('walldoor/D5.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D6.jpg" onclick="openModal('walldoor/D6.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D7.jpg" onclick="openModal('walldoor/D7.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D8.jpg" onclick="openModal('walldoor/D8.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D9.jpg" onclick="openModal('walldoor/D9.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D10.jpg" onclick="openModal('walldoor/D10.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D11.jpg" onclick="openModal('walldoor/D11.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D12.jpg" onclick="openModal('walldoor/D12.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D13.jpg" onclick="openModal('walldoor/D13.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D14.jpg" onclick="openModal('walldoor/D14.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D15.jpg" onclick="openModal('walldoor/D15.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D16.jpg" onclick="openModal('walldoor/D16.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D17.jpg" onclick="openModal('walldoor/D17.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D18.jpg" onclick="openModal('walldoor/D18.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D19.jpg" onclick="openModal('walldoor/D19.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/D20.jpg" onclick="openModal('walldoor/D20.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/D21.jpg" onclick="openModal('walldoor/D21.jpg')">
+			</div>
+
+		</div>
+
+
+	<center>
+
+		<div class="cont">
+			<div class="cont-box" id="flooring">
+				<h1 style="font-weight: bolder";>FLOORING</h1>
+			</div>
+		</div>
+
+		<h2>Flooring:</h2>
+		<div id="description">
+			<p>
+				Experience the luxury of Teak Timber flooring. Our high-quality Teak flooring adds warmth and character to any space, be it residential or commercial. The natural beauty and durability of Taek wood make it an ideal choice for high-trafic areas. Whether you prefer a traditional or morden aestheic, our Teak flooring options provide a timeless elegence that will transform your space.
+			</p>
+		</div>
+
+		<div class="cont-scroll">
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/F.jpg" onclick="openModal('walldoor/F.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/F2.jpg" onclick="openModal('walldoor/F2.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/F3.jpg" onclick="openModal('walldoor/F3.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/F4.jpg" onclick="openModal('walldoor/F4.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/F5.jpg" onclick="openModal('walldoor/F5.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/F6.jpg" onclick="openModal('walldoor/F6.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/F7.jpg" onclick="openModal('walldoor/F7.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/F8.jpg" onclick="openModal('walldoor/F8.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/F10.jpg" onclick="openModal('walldoor/F10.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/F11.jpg" onclick="openModal('walldoor/F11.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/F12.jpg" onclick="openModal('walldoor/F12.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e5.jpg" onclick="openModal('dpics/e5.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a6.jpg" onclick="openModal('dpics/a6.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e6.jpg" onclick="openModal('dpics/e6.jpg')">
+			</div>
+
+		</div>
+	</center>
+
+
+		<div class="cont">
+			<div class="cont-box" id="kitchen">
+				<h1 style="font-weight: bolder";>KITCHEN</h1>
+			</div>
+		</div>
+
+
+		<h2>Kitchen:</h2>
+		<div id="description">
+			<p>
+				Upgrade ypur kitchen with our Teak Timber furniture. From cabinets and countertops to dining tables and chairs, our Teak kitchen furniture combines functionality with exquisite craftsmanship. The natural oils in Teak make it resistance to moisture and stains, ensuring longevity and easy maintenance. Create a stunning and functional kitchen with our Teak Timber collection.
+			</p>
+		</div>
+
+
+		<div class="cont-scroll" style="left: 0;">
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/K.jpg" onclick="openModal('walldoor/K.jpg')">
+				<button>Purchase</button>
+				<img src="walldoor/K1.jpg" onclick="openModal('walldoor/K1.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="walldoor/K2.jpg" onclick="openModal('walldoor/K2.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/K3.jpg" onclick="openModal('allpic/K3.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/K4.jpg" onclick="openModal('allpic/K4.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/K5.jpg" onclick="openModal('allpic/K5.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/K6.jpg" onclick="openModal('allpic/K6.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/K7.jpg" onclick="openModal('allpic/K7.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/K8.jpg" onclick="openModal('allpic/K8.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/K9.jpg" onclick="openModal('allpic/K9.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/K10.jpg" onclick="openModal('allpic/K10.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/K11.jpg" onclick="openModal('allpic/K11.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/K12.jpg" onclick="openModal('allpic/K12.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/K13.jpg" onclick="openModal('allpic/K13.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/K14.jpg" onclick="openModal('allpic/K14.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/K15.jpg" onclick="openModal('allpic/K16.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/K16.jpg" onclick="openModal('allpic/K16.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/K17.jpg" onclick="openModal('allpic/K17.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/K18.jpg" onclick="openModal('allpic/K18.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/K19.jpg" onclick="openModal('allpic/K19.jpg')">
+			</div>
+		</div>
+
+
+<center>
+
+		<div class="cont">
+			<div class="cont-box" id="pergolas">
+				<h1 style="font-weight: bolder";>PERGOLAS</h1>
+			</div>
+		</div>
+
+		<h2>Pergolas:</h2>
+		<div id="description">
+			<p>
+				Enhance your outdoor living space with our Teak Timber pergolas. Designed to provide both shade and style, our pergolas are crafted using premium Teak wood, known for its durability and resistance to elements. Whether you want to create a cozy seating area or a beautiful garden feature, our Teak pergolas add a touch of elegence to any outdoor setting.
+			</p>
+		</div>
+
+
+		<div class="cont-scroll" style="left: 0;">
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/P.jpg" onclick="openModal('allpic/P.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/P1.jpg" onclick="openModal('allpic/P1.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/P2.jpg" onclick="openModal('allpic/P2.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/P3.jpg" onclick="openModal('allpic/P3.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/P4.jpg" onclick="openModal('allpic/P4.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/P5.jpg" onclick="openModal('allpic/P5.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/P6.jpg" onclick="openModal('allpic/P6.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/P7.jpg" onclick="openModal('allpic/P7.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/P8.jpg" onclick="openModal('allpic/P8.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/P9.jpg" onclick="openModal('allpic/P9.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/P10.jpg" onclick="openModal('allpic/P10.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/P11.jpg" onclick="openModal('allpic/P11.jpg')">
+			</div>
+
+		</div>
+
+</center>
+
+		<div class="cont">
+			<div class="cont-box" id="staircases">
+				<h1 style="font-weight: bolder";>STAIRCASES</h1>
+			</div>
+		</div>
+
+		<h2>Staircases:</h2>
+		<div id="description">
+			<p>
+				Make a statement with our Teak Timber staircases. Crafted with accurancy, precision and attention to detail, our Teak staircases combine fnctionality and aesthetics seamlessly. Each step showcases the natural grains and patterns of Teak wood, creating a stunning focal point in your home. Elevate your interior design and add a touch of elegance with our styled Teak Timber staircases.
+			</p>
+		</div>
+
+		<div class="cont-scroll" style="left: 0;">
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/S.jpg" onclick="openModal('allpic/S.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/S1.jpg" onclick="openModal('allpic/S1.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/S2.jpg" onclick="openModal('allpic/S2.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/S3.jpg" onclick="openModal('allpic/S3.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="allpic/S4.jpg" onclick="openModal('allpic/S4.jpg')">
+				<button>Purchase</button>
+				<img src="allpic/S5.jpg" onclick="openModal('allpic/S5.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a3.jpg" onclick="openModal('dpics/a3.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e3.jpg" onclick="openModal('dpics/e3.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a4.jpg" onclick="openModal('dpics/a4.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e4.jpg" onclick="openModal('dpics/e4.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a5.jpg" onclick="openModal('dpics/a5.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e5.jpg" onclick="openModal('dpics/e5.jpg')">
+			</div>
+			<div class="cont-cube">
+				<button>Purchase</button>
+				<img src="dpics/a6.jpg" onclick="openModal('dpics/a6.jpg')">
+				<button>Purchase</button>
+				<img src="dpics/e6.jpg" onclick="openModal('dpics/e6.jpg')">
+			</div>
+
+		</div>
+
+		<h1>OTHER GROUPINGS</h1>
+
+		<div class="cont">
+			<div class="cont-box" id="living">
+				<h1 style="font-weight: bolder";>LIVINGROOMS</h1>
+			</div>
+		</div>
+<center>
+		<h2>Living Rooms:</h2>
+			<div id="description">
+				<p>
+					Tranform your living room into a cozy and elegant space with our exquisite Teak Timber furniture. Our living room collection showcases the timeless beauty of Teak wood. From luxurios sofas and coffee tables to entertainment units and bookshelves, our Teak furniture adds goodness to any living room decor.
+				</p>
+			</div>
+			<div class="single_img_present">
+				<img src="new5/Polish_20230921_203551351.jpg">
+			</div>
+</center>	
+
+		<div class="cont">
+			<div class="cont-box" id="decking">
+				<h1 style="font-weight: bolder";>DECKING</h1>
+			</div>
+		</div>
+
+		<h2>Decking:</h2>
+			<div id="description">
+				<p>
+					Transform your outdoor space into a luxurious retreat with our Teak Timber decking. Crafted from premium Teak woood. Whether a deck by the pool or a cozy seating area in your garden, our Teak decking adds beauty and purpose to your outdoor living space.
+				</p>
+			</div>
+			<div class="single_img_present">
+				<img src="new2/Polish_20240302_172506363.jpg">
+			</div>
+
+
+			<div class="cont">
+				<div class="cont-box" id="conversation-pits">
+					<h1 style="font-weight: bolder;">CONVERSATION-PITS</h1>
+				</div>
+			</div>
+<center>
+			<h2>Conversation pits</h2>
+			<div id="description">
+				<p>
+					Create a unique and inviting gathering space with our Teak Timber conversation pits. Our converstaion pits offer a cozy seating area where firends and family can come together and engage in lively conversations. These conversation pits will remain a stunning counterpiece of your indoor and outdoor area for many years. 
+				</p>
+			</div>
+			<div class="single_img_present">
+				<img src="new3/Polish_20230521_142422088.jpg">
+			</div>
+</center>
+
+
+				<div class="cont">
+					<div class="cont-box" id="sundry">
+						<h1 style="font-weight: bolder;">SUNDRY</h1>
+					</div>
+				</div>
+				
+
+				<h2>Sundry:</h2>
+				<div id="description">
+					<p>
+						Complete your furniture with a wide range of Teak Timber sundry items. From decorative accents like mirrors, wall shelves, and photo frames to functional pieces like tables and ottomans, our sundry collection complements your existing furniture while highlighting the natural beauty of Teak wood. Each piece is meticulously crafted.
+					</p>
+				</div>
+
+				
+
+		<center>
+			<div class="container">
+				<div class="contentt">
+					<img src="allpic/OFF1.jpg" alt="product">
+					<img src="allpic/OFF8.jpg" alt="product">
+					<img src="allpic/OFF4.jpg" alt="product">
+					<img src="allpic/white.jpg" alt="product">
+					<img src="allpic/white1.jpg" alt="product">
+					<img src="allpic/white3.jpg" alt="product">
+					<img src="allpic/S6F.jpg" alt="product">
+					<img src="allpic/L10.jpg" alt="product">
+					<img src="allpic/sofx.jpg" alt="product">
+					<img src="allpic/L1.jpg" alt="product">
+					<img src="allpic/L13.jpg" alt="product">
+					<img src="allpic/K4.jpg" alt="product">
+					<img src="allpic/K5.jpg" alt="product">
+					<img src="allpic/K6.jpg" alt="product">
+					<img src="allpic/P3.jpg" alt="product">
+					<img src="walldoor/chair.jpg" alt="product">
+					<img src="walldoor/conv5.jpg" alt="product">
+					<img src="allpic/P4.jpg" alt="product">
+					<img src="allpic/perg.jpg" alt="product">
+					<img src="walldoor/conv.jpg" alt="product">
+					<img src="allpic/P7.jpg" alt="product">
+					<img src="allpic/T1.jpg" alt="product">
+					<img src="allpic/T2.jpg" alt="product">
+					<img src="allpic/T3.jpg" alt="product">
+					<img src="allpic/T4.jpg" alt="product">
+					<img src="allpic/T5.jpg" alt="product">
+					<img src="allpic/redchair.jpg" alt="product">
+					<img src="walldoor/glass.jpg" alt="product">
+					<img src="walldoor/gsof.jpg" alt="product">
+					<img src="walldoor/div.jpg" alt="product">
+					<img src="walldoor/DM11.jpg" alt="product">
+					<img src="walldoor/DM12.jpg" alt="product">
+					<img src="walldoor/DM17.jpg" alt="product">
+					<img src="walldoor/C4.jpg" alt="product">
+					<img src="walldoor/conv1.jpg" alt="product">
+					<img src="new6/couch.jpg" alt="product">
+					<img src="new6/w.jpg" alt="product">
+					<img src="new6/w1.jpg" alt="product">
+					<img src="new6/sofa.jpg" alt="product">
+					<img src="new6/sofa1.jpg" alt="product">
+					<img src="allpic/P3.jpg" alt="product">
+				</div>
+			</div>
+		</center>
+	
+			<style>
+				.container {
+					height: 500px;
+					
+					overflow: hidden;
+					position: relative;
+				}
+
+				.contentt {
+					height: 500px;
+
+					position: absolute;
+					top: 0;
+					animation: scroll 500s linear infinite;
+					object-fit: fit;
+				}
+
+
+				@keyframes scroll {
+					0% {
+						top: 0;
+					}
+					100% {
+						top: -10000%;
+					}
+				}
+
+				.container:hover .contentt {
+					animation-play-state: paused;
+				}
+			</style>
+
+
+
+
+
+
+		<div id="bottom"><a href="#top">Top</a><div></div>
+
+	<div class="footer">
+		<div class="nxt2nxt">
+			<p>
+				<div style="font-size: 30px;"><i class="fas fa-map-marker-alt">Location:</i></div>
+				<div>1 Green Trees Road</div>
+				<div>Lochinvar</div>
+				<div>Harare</div>
+				<div>Zimbabwe</div>
+
+				<div class="social-icons">
+					<i class="fas fa-envelope"></i>
+					<i class="fas fa-phone"></i>
+				</div>
+				<a href="tel: 0783578007" class="call-link">Dial 1</a>
+				<a href="tel: 0716032471" class="call-link">Dial 2</a>
+			</p>
+		</div>
+
+		
+				
+			
+		<div class="nxt2nxt">
+			<p>
+				<div style="font-size: 30px;">Furniture Services:</div>
+				<div>Decking</div>
+				<div>Kitchen</div>
+				<div>Pergolas</div>
+				<div>Bedroom Furniture and more ... </div>
+			</p>
+		</div>
+
+		<div class="nxt2nxt">
+			<div style="font-size: 30px;">Our Social Handles:</div>
+
+			<div class="social-icons">
+				<a href="#"><i class="fab fa-facebook"></i></a>
+				<a href="#"><i class="fab fa-linkedin"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a href="#"><i class="fab fa-youtube"></i></a>
+			</div>
+		
+			<div class="social-icons">
+				<a href="#"><i class="fab fa-whatsapp"></i></a>
+				<a href="#"><i class="fab fa-pinterest"></i></a>
+			</div>
+
+	</div>
+
+	Site by lanso: <i class="fab fa-whatsapp"></i> <a href="https://wa.me/+263714581271"> Software Eng: Frontend & Backend Dev; N.B this is a static site.</a>
+
+
+</body>
+</html>
